@@ -1,0 +1,20 @@
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.chart {
+  margin: 5px;
+  margin-top: 30px;
+  padding: 5px;
+  height: 270px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 770px) {
+  .chart {
+    height: 230px;
+  }
+}
