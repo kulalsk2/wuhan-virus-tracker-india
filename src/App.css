@@ -1,6 +1,6 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  padding: 0;
+  margin: 0;
 }
 body {
   background-color: #f5f6fa;
@@ -8,16 +8,20 @@ body {
 .app {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .app_body {
   display: flex;
+  flex-direction: column;
+}
+.app_right_left {
+  display: flex;
   flex-direction: row;
-  padding: 5px;
 }
 .app_right {
   display: flex;
   flex: 0.6;
-  padding: 5px;
+  margin: 5px;
   flex-direction: column;
 }
 .app_right_select {
@@ -26,15 +30,17 @@ body {
   justify-content: center;
   padding-bottom: 5px;
 }
-.app__dropdown {
+.app_dropdown {
   width: 250px;
+}
+.app_select {
+  background-color: white;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 .app_header {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
   padding: 15px;
   font-size: x-large;
   background-color: cornflowerblue;
@@ -47,8 +53,25 @@ body {
 .app_left {
   flex: 0.4;
 }
+.stateinfotable {
+  padding-left: 10px;
+  padding-right: 7px;
+}
+
 @media (max-width: 770px) {
-  .app_body {
+  .app_right_left {
     flex-direction: column;
+  }
+
+  .card_title {
+    text-align: center !important;
+    font-size: 13px !important;
+    margin: 0px !important;
+  }
+  .MuiCardContent-root {
+    padding: 10px !important;
+  }
+  .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: none;
   }
 }

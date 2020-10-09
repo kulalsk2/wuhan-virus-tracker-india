@@ -1,5 +1,9 @@
 import React from "react";
 import { Circle, Popup } from "react-leaflet";
+import numeral from "numeral";
+
+export const prettyNumber = (stat) =>
+  stat ? `${numeral(stat).format("0a")}` : "+0";
 
 const casesTypeValues = {
   active: {
@@ -34,7 +38,7 @@ export const showCirclesOnMap = (data, casesType = "active") =>
             Math.sqrt(state[casesType]) * casesTypeValues[casesType].multiplier
           }
         >
-          <Popup>
+          <Popup key={state.statecode}>
             <div className="info-container">
               <div className="info-name">{state.state}</div>
               <div className="info-active">Active:{state.active}</div>

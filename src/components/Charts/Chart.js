@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Bar, Line } from "react-chartjs-2";
+import React from "react";
+import { Line } from "react-chartjs-2";
 import "./Chart.css";
 
 const options = {
@@ -33,23 +33,16 @@ const options = {
   },
 };
 
-const Charts = () => {
-  const [dailyData, setData] = useState([]);
-  useEffect(() => {
-    fetch("https://api.covid19india.org/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data.cases_time_series);
-      });
-  }, []);
-
-  const lineChart1 = dailyData ? (
+const Charts = ({ data }) => {
+  const lineChart1 = data.cases_time_series ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => date),
+        labels: data.cases_time_series.map(({ date }) => date),
         datasets: [
           {
-            data: dailyData.map(({ dailydeceased }) => dailydeceased),
+            data: data.cases_time_series.map(
+              ({ dailydeceased }) => dailydeceased
+            ),
             label: "Deaths",
             borderColor: "#ff3333",
             fill: true,
@@ -69,13 +62,15 @@ const Charts = () => {
       }}
     />
   ) : null;
-  const lineChart2 = dailyData ? (
+  const lineChart2 = data.cases_time_series ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => date),
+        labels: data.cases_time_series.map(({ date }) => date),
         datasets: [
           {
-            data: dailyData.map(({ dailyconfirmed }) => dailyconfirmed),
+            data: data.cases_time_series.map(
+              ({ dailyconfirmed }) => dailyconfirmed
+            ),
             label: "Infected",
             borderColor: "#3333ff",
             backgroundColor: "rgba(56, 56, 244, 0.5)",
@@ -89,19 +84,21 @@ const Charts = () => {
         title: {
           display: true,
           text: "Confirmed Cases",
-          fontSize: 15,
+          fontSize: 20,
           position: "left",
         },
       }}
     />
   ) : null;
-  const lineChart3 = dailyData ? (
+  const lineChart3 = data.cases_time_series ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => date),
+        labels: data.cases_time_series.map(({ date }) => date),
         datasets: [
           {
-            data: dailyData.map(({ dailyrecovered }) => dailyrecovered),
+            data: data.cases_time_series.map(
+              ({ dailyrecovered }) => dailyrecovered
+            ),
             label: "Recovered",
             borderColor: "#33ff33",
             fill: true,

@@ -13,6 +13,7 @@ function CircleMap({ casesType, center, mapData }) {
   return (
     <div className="map">
       <LeafletMap
+        key="maps"
         center={center}
         zoom={zoom}
         maxZoom={10}
@@ -20,7 +21,7 @@ function CircleMap({ casesType, center, mapData }) {
         scrollWheelZoom={true}
         dragging={true}
         animate={true}
-        minZoom={2}
+        minZoom={4}
         attributionControl={true}
         bounds={[
           [minLat, minLong],
