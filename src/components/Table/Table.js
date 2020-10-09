@@ -76,21 +76,21 @@ export default function StateInfoTable({ states }) {
           {states.map((state) => {
             return (
               <TableRow
-                key={Math.round(Math.random() * 100000)}
+                key={Math.random() / Math.random()}
                 className={i++ % 2 ? classes.oddRow : classes.evenRow}
               >
                 <TableCell key={state.state}>{state.state}</TableCell>
                 <TableCell key={state.statecode}>{state.statecode}</TableCell>
-                <TableCell key={Math.round(Math.random() * 100000)}>
+                <TableCell key={Math.random() / Math.random()}>
                   {inrformat(state.active)}
                 </TableCell>
-                <TableCell key={Math.round(Math.random() * 100000)}>
+                <TableCell key={Math.random() / Math.random()}>
                   {inrformat(state.confirmed)}
                 </TableCell>
-                <TableCell key={Math.round(Math.random() * 100000)}>
+                <TableCell key={Math.random() / Math.random()}>
                   {inrformat(state.recovered)}
                 </TableCell>
-                <TableCell key={Math.round(Math.random() * 100000)}>
+                <TableCell key={Math.random() / Math.random()}>
                   {inrformat(state.deaths)}
                 </TableCell>
               </TableRow>
