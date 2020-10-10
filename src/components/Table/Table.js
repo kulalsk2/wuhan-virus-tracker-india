@@ -6,7 +6,6 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { makeStyles } from "@material-ui/core/styles";
-import { value } from "numeral";
 const inrformat = require("inrformat");
 
 const useStyles = makeStyles({
@@ -22,37 +21,37 @@ const useStyles = makeStyles({
     backgroundColor: "#f3f2f8",
   },
   evenRow: {
-    backgroundColor: "#A0A0A0",
+    backgroundColor: "#bdbdbd",
   },
 });
 
 const headerColumns = [
-  { id: "state", label: "State" },
-  { id: "code", label: "StateCode" },
+  { id: "state", label: "State", align: "left" },
+  { id: "code", label: "StateCode", align: "center" },
   {
     id: "active",
     label: "Active",
 
-    align: "right",
+    align: "center",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "confirmed",
     label: "Confirmed",
 
-    align: "right",
+    align: "center",
     format: (value) => value.toLocaleString("en-IN"),
   },
   {
     id: "recovered",
     label: "Recovered",
-    align: "right",
+    align: "center",
     format: (value) => value.toLocaleString("en-IN"),
   },
   {
     id: "deaths",
     label: "Deceased",
-    align: "right",
+    align: "center",
     format: (value) => value.toLocaleString("en-IN"),
   },
 ];
@@ -79,18 +78,46 @@ export default function StateInfoTable({ states }) {
                 key={Math.random() / Math.random()}
                 className={i++ % 2 ? classes.oddRow : classes.evenRow}
               >
-                <TableCell key={state.state}>{state.state}</TableCell>
-                <TableCell key={state.statecode}>{state.statecode}</TableCell>
-                <TableCell key={Math.random() / Math.random()}>
+                <TableCell
+                  key={state.state}
+                  align="left"
+                  style={{ borderRadius: 15 }}
+                >
+                  {state.state}
+                </TableCell>
+                <TableCell
+                  key={state.statecode}
+                  align="center"
+                  style={{ borderRadius: 15 }}
+                >
+                  {state.statecode}
+                </TableCell>
+                <TableCell
+                  key={Math.random() / Math.random()}
+                  align="center"
+                  style={{ borderRadius: 15 }}
+                >
                   {inrformat(state.active)}
                 </TableCell>
-                <TableCell key={Math.random() / Math.random()}>
+                <TableCell
+                  key={Math.random() / Math.random()}
+                  align="center"
+                  style={{ borderRadius: 15 }}
+                >
                   {inrformat(state.confirmed)}
                 </TableCell>
-                <TableCell key={Math.random() / Math.random()}>
+                <TableCell
+                  key={Math.random() / Math.random()}
+                  align="center"
+                  style={{ borderRadius: 15 }}
+                >
                   {inrformat(state.recovered)}
                 </TableCell>
-                <TableCell key={Math.random() / Math.random()}>
+                <TableCell
+                  key={Math.random() / Math.random()}
+                  align="center"
+                  style={{ borderRadius: 15 }}
+                >
                   {inrformat(state.deaths)}
                 </TableCell>
               </TableRow>

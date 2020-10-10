@@ -11,15 +11,15 @@ const casesTypeValues = {
     multiplier: 800,
   },
   confirmed: {
-    color: "#ff20ff",
+    color: "#3783ea",
     multiplier: 650,
   },
   recovered: {
-    color: "#7dff1d",
+    color: "#2c9947",
     multiplier: 650,
   },
   deaths: {
-    color: "#ff4443",
+    color: "#e9113f",
     multiplier: 2400,
   },
 };
@@ -30,7 +30,7 @@ export const showCirclesOnMap = (data, casesType = "active") =>
         <Circle
           key={i}
           center={[state.lat, state.lng]}
-          fillOpacity={0.4}
+          fillOpacity={0.3}
           stroke={true}
           color={casesTypeValues[casesType].color}
           fillColor={casesTypeValues[casesType].color}

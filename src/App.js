@@ -11,9 +11,9 @@ import "./App.css";
 import Charts from "./components/Charts/Chart";
 import { prettyNumber } from "./components/util";
 import StateInfoTable from "./components/Table/Table";
-
 function App() {
   const [data, setData] = useState({});
+  const [darkMode, setDarkMode] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [states, setStatesData] = useState([]);
   const [selectedState, setSelectedState] = useState("TT");
@@ -94,6 +94,8 @@ function App() {
               <StatusCard
                 onClick={(e) => setCasesType("active")}
                 title="Active"
+                active={casesType == "active"}
+                isColor1={true}
                 cases={
                   windowWidth < 770
                     ? prettyNumber(selectedStateInfo.active)
@@ -101,6 +103,8 @@ function App() {
                 }
               />
               <StatusCard
+                active={casesType == "confirmed"}
+                isColor2={true}
                 onClick={(e) => setCasesType("confirmed")}
                 title="Confirmed"
                 cases={
@@ -110,6 +114,8 @@ function App() {
                 }
               />
               <StatusCard
+                active={casesType == "recovered"}
+                isColor3={true}
                 onClick={(e) => setCasesType("recovered")}
                 title="Recovered"
                 cases={
@@ -119,6 +125,8 @@ function App() {
                 }
               />
               <StatusCard
+                active={casesType == "deaths"}
+                isColor4={true}
                 onClick={(e) => setCasesType("deaths")}
                 title="Deaths"
                 cases={
