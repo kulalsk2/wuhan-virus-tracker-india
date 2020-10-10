@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b0194e993a5056d3e73be7b84c1a9e2",
+    "revision": "1f53b19030d67cbebc7611b82601c6b4",
     "url": "/wuhan-virus-tracker-india/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wuhan-virus-tracker-india/static/css/2.a4567992.chunk.css"
   },
   {
-    "revision": "54be43d32e4fe843437d",
+    "revision": "6bd3df764ff1d8dace9c",
     "url": "/wuhan-virus-tracker-india/static/css/main.72878789.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wuhan-virus-tracker-india/static/js/2.7378d076.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "54be43d32e4fe843437d",
-    "url": "/wuhan-virus-tracker-india/static/js/main.029a1626.chunk.js"
+    "revision": "6bd3df764ff1d8dace9c",
+    "url": "/wuhan-virus-tracker-india/static/js/main.09c01b91.chunk.js"
   },
   {
     "revision": "884e22b570f7da594763",
