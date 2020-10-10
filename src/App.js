@@ -13,7 +13,7 @@ import { prettyNumber } from "./components/util";
 import StateInfoTable from "./components/Table/Table";
 function App() {
   const [data, setData] = useState({});
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(getInitialMode());
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [states, setStatesData] = useState([]);
   const [selectedState, setSelectedState] = useState("TT");
@@ -21,9 +21,18 @@ function App() {
   const [casesType, setCasesType] = useState("active");
   const [mapCenter, setMapCenter] = useState([24.070541, 83.003948]);
 
+  useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getInitialMode() {
+    return JSON.parse(localStorage.getItem("dark"));
+  }
+
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
   };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   });
@@ -66,10 +75,14 @@ function App() {
   const countrySelect = (
     <FormControl className="app_dropdown">
       <Select
-        style={{
-          backgroundColor: `${darkMode && "#1f1f1f"}`,
-          color: `${darkMode && "white"}`,
-        }}
+        style={
+          darkMode
+            ? {
+                backgroundColor: "#1f1f1f",
+                color: "white",
+              }
+            : {}
+        }
         className="app_select"
         variant="outlined"
         value={selectedState}
@@ -88,14 +101,30 @@ function App() {
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText>Select state from Here</FormHelperText>
+      <FormHelperText style={darkMode ? { color: "white" } : {}}>
+        Select state from Here
+      </FormHelperText>
     </FormControl>
   );
 
   return (
     <div className={`app ${darkMode && "dark-mode"}`}>
       <div className={`app_header ${darkMode && "dark-mode-header"}`}>
-        <nav>Wuhan Virus Tracker</nav>
+        <nav className="navbar">Wuhan Virus Tracker</nav>
+        <div className="toggle-container">
+          <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+          <span className="toggle">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              className="checkbox"
+              id="checkbox"
+              onChange={() => setDarkMode((prevmode) => !prevmode)}
+            />
+            <label htmlFor="checkbox" />
+          </span>
+          <span style={{ color: darkMode ? "slateblue" : "grey" }}>☾</span>
+        </div>
       </div>
       <div className="app_body">
         <div className="app_right_left">

@@ -55,6 +55,9 @@ export default function StateInfoTable({ states, isDark }) {
     evenRow: {
       backgroundColor: `${isDark ? "#616161" : "#bdbdbd"}`,
     },
+    cellOfROw: isDark
+      ? { borderRadius: 15, border: 0, color: "white" }
+      : { borderRadius: 15, border: 0, color: "black" },
   });
 
   const classes = useStyles();
@@ -90,42 +93,42 @@ export default function StateInfoTable({ states, isDark }) {
                 <TableCell
                   key={state.state}
                   align="left"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {state.state}
                 </TableCell>
                 <TableCell
                   key={state.statecode}
                   align="center"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {state.statecode}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {inrformat(state.active)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {inrformat(state.confirmed)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {inrformat(state.recovered)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15, border: 0, color: "white" }}
+                  className={classes.cellOfROw}
                 >
                   {inrformat(state.deaths)}
                 </TableCell>
