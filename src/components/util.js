@@ -23,6 +23,7 @@ const casesTypeValues = {
     multiplier: 2400,
   },
 };
+
 export const showCirclesOnMap = (data, casesType = "active") =>
   data.map((state, i) => {
     if (state.statecode !== "TT") {
@@ -38,15 +39,21 @@ export const showCirclesOnMap = (data, casesType = "active") =>
             Math.sqrt(state[casesType]) * casesTypeValues[casesType].multiplier
           }
         >
-          <Popup key={state.statecode}>
-            <div className="info-container">
-              <div className="info-name">{state.state}</div>
-              <div className="info-active">Active:{state.active}</div>
-              <div className="info-confirmed">Recovered:{state.confirmed}</div>
-              <div className="info-recovered">Recovered:{state.recovered}</div>
-              <div className="info-deaths">Deaths: {state.deaths}</div>
-            </div>
-          </Popup>
+          <div className="popupdarkMode">
+            <Popup key={state.statecode}>
+              <div className={"info-container"}>
+                <div className="info-name">{state.state}</div>
+                <div className="info-active">Active:{state.active}</div>
+                <div className="info-confirmed">
+                  Recovered:{state.confirmed}
+                </div>
+                <div className="info-recovered">
+                  Recovered:{state.recovered}
+                </div>
+                <div className="info-deaths">Deaths: {state.deaths}</div>
+              </div>
+            </Popup>
+          </div>
         </Circle>
       );
     } else {

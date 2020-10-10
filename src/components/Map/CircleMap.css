@@ -5,7 +5,7 @@
   margin-left: 5px;
   border-radius: 13px;
   margin-top: 16px;
-  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.6);
 }
 
 .map .leaflet-container {
@@ -23,7 +23,13 @@
   font-size: 15px;
   margin-top: 5px;
 }
-
+.map--darkMode {
+  background-color: #1f1f1f;
+}
+.popupdarkMode {
+  background-color: black !important;
+  color: white !important;
+}
 @media (max-width: 770px) {
   .map {
     height: 500px;

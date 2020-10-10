@@ -33,7 +33,7 @@ const options = {
   },
 };
 
-const Charts = ({ data }) => {
+const Charts = ({ data, isDark }) => {
   const lineChart1 = data.cases_time_series ? (
     <Line
       data={{
@@ -56,6 +56,7 @@ const Charts = ({ data }) => {
         title: {
           display: true,
           text: "Deceased Cases",
+          fontColor: `${isDark ? "white" : "grey"}`,
           fontSize: 20,
           position: "left",
         },
@@ -84,6 +85,7 @@ const Charts = ({ data }) => {
         title: {
           display: true,
           text: "Confirmed Cases",
+          fontColor: `${isDark ? "white" : "grey"}`,
           fontSize: 20,
           position: "left",
         },
@@ -113,6 +115,7 @@ const Charts = ({ data }) => {
           display: true,
           text: "Recovered Cases",
           fontSize: 20,
+          fontColor: `${isDark ? "white" : "grey"}`,
           position: "left",
         },
       }}
@@ -121,9 +124,9 @@ const Charts = ({ data }) => {
 
   return (
     <div className="chart-container">
-      <div className="chart">{lineChart1}</div>
-      <div className="chart">{lineChart2}</div>
-      <div className="chart">{lineChart3}</div>
+      <div className={`chart ${isDark && "chart--darkMode"}`}>{lineChart1}</div>
+      <div className={`chart ${isDark && "chart--darkMode"}`}>{lineChart2}</div>
+      <div className={`chart ${isDark && "chart--darkMode"}`}>{lineChart3}</div>
     </div>
   );
 };

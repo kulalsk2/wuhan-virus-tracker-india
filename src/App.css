@@ -35,7 +35,7 @@ body {
 }
 .app_select {
   background-color: white;
-  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.6);
 }
 .app_header {
   display: flex;
@@ -43,8 +43,10 @@ body {
   align-items: center;
   padding: 15px;
   font-size: x-large;
-  background-color: cornflowerblue;
-  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.6);
+  border-radius: 9px;
+  margin: 9px;
 }
 .app_status {
   display: flex;
@@ -57,7 +59,17 @@ body {
   padding-left: 10px;
   padding-right: 7px;
 }
-
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.dark-mode-header {
+  background-color: #1f1f1f;
+  color: white;
+}
+.MuiList-padding {
+  padding: 0px !important;
+}
 @media (max-width: 770px) {
   .app_right_left {
     flex-direction: column;

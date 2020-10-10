@@ -13,7 +13,7 @@ import { prettyNumber } from "./components/util";
 import StateInfoTable from "./components/Table/Table";
 function App() {
   const [data, setData] = useState({});
-  const [darkMode, setDarkMode] = useState([]);
+  const [darkMode, setDarkMode] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [states, setStatesData] = useState([]);
   const [selectedState, setSelectedState] = useState("TT");
@@ -66,13 +66,24 @@ function App() {
   const countrySelect = (
     <FormControl className="app_dropdown">
       <Select
+        style={{
+          backgroundColor: `${darkMode && "#1f1f1f"}`,
+          color: `${darkMode && "white"}`,
+        }}
         className="app_select"
         variant="outlined"
         value={selectedState}
         onChange={onStateChange}
       >
         {states.map((state) => (
-          <MenuItem key={state.statecode} value={state.statecode}>
+          <MenuItem
+            key={state.statecode}
+            value={state.statecode}
+            style={{
+              backgroundColor: `${darkMode && "#1f1f1f"}`,
+              color: `${darkMode && "white"}`,
+            }}
+          >
             {state.name}
           </MenuItem>
         ))}
@@ -82,9 +93,9 @@ function App() {
   );
 
   return (
-    <div className="app">
-      <div className="app_header">
-        <h4>Wuhan Virus Tracker</h4>
+    <div className={`app ${darkMode && "dark-mode"}`}>
+      <div className={`app_header ${darkMode && "dark-mode-header"}`}>
+        <nav>Wuhan Virus Tracker</nav>
       </div>
       <div className="app_body">
         <div className="app_right_left">
@@ -92,6 +103,7 @@ function App() {
             <div className="app_right_select">{countrySelect}</div>
             <div className="app_status">
               <StatusCard
+                isDark={darkMode}
                 onClick={(e) => setCasesType("active")}
                 title="Active"
                 active={casesType == "active"}
@@ -103,6 +115,7 @@ function App() {
                 }
               />
               <StatusCard
+                isDark={darkMode}
                 active={casesType == "confirmed"}
                 isColor2={true}
                 onClick={(e) => setCasesType("confirmed")}
@@ -114,6 +127,7 @@ function App() {
                 }
               />
               <StatusCard
+                isDark={darkMode}
                 active={casesType == "recovered"}
                 isColor3={true}
                 onClick={(e) => setCasesType("recovered")}
@@ -125,6 +139,7 @@ function App() {
                 }
               />
               <StatusCard
+                isDark={darkMode}
                 active={casesType == "deaths"}
                 isColor4={true}
                 onClick={(e) => setCasesType("deaths")}
@@ -137,17 +152,18 @@ function App() {
               />
             </div>
             <CircleMap
+              isDark={darkMode}
               center={mapCenter}
               casesType={casesType}
               mapData={states}
             />
           </div>
           <div className="app_left">
-            <Charts data={data} />
+            <Charts isDark={darkMode} data={data} />
           </div>
         </div>
         <div className="stateinfotable">
-          <StateInfoTable states={states} />
+          <StateInfoTable states={states} isDark={darkMode} />
         </div>
       </div>
     </div>

@@ -27,3 +27,7 @@
 .card_color4 {
   color: #e9113f;
 }
+.card--darkmode {
+  background-color: #1f1f1f !important;
+  color: white !important;
+}

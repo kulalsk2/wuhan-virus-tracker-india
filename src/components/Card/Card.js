@@ -13,17 +13,23 @@ export default function StatusCard({
   cases,
   active,
   onClick,
+  isDark,
 }) {
   return (
     <Card
       onClick={onClick}
-      className={`card ${active && "card--selected"}
+      className={`card ${isDark && "card--darkmode"} ${
+        active && "card--selected"
+      }
        ${isColor2 && "card--color2"}
       ${isColor3 && "card--color3"}
       ${isColor4 && "card--color4"}`}
     >
       <CardContent>
-        <Typography className="card_title" color="textSecondary">
+        <Typography
+          className={`card_title ${isDark && "card--darkmode"}`}
+          color="textSecondary"
+        >
           {title}
         </Typography>
         <h2

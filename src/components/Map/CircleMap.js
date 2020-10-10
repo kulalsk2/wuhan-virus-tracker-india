@@ -9,10 +9,11 @@ const maxLat = 20.940737;
 const minLong = 70.23846;
 const maxLong = 93.781153;
 
-function CircleMap({ casesType, center, mapData }) {
+function CircleMap({ casesType, center, mapData, isDark }) {
   return (
-    <div className="map">
+    <div className={`map ${isDark && "map--darkMode"}`}>
       <LeafletMap
+        zoomControl={false}
         key="maps"
         center={center}
         zoom={zoom}
@@ -29,10 +30,18 @@ function CircleMap({ casesType, center, mapData }) {
         ]}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url={`${
+            isDark
+              ? "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+              : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          }`}
+          attribution={`${
+            isDark
+              ? '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+              : 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }`}
         />
-        {showCirclesOnMap(mapData, casesType)}
+        {showCirclesOnMap(mapData, casesType, isDark)}
       </LeafletMap>
     </div>
   );

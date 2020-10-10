@@ -8,23 +8,6 @@ import TableRow from "@material-ui/core/TableRow";
 import { makeStyles } from "@material-ui/core/styles";
 const inrformat = require("inrformat");
 
-const useStyles = makeStyles({
-  tablecontainer: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    boxShadow: "0 0 8px -4px rgba(0, 0, 0, 0.5)",
-    marginBottom: 10,
-    marginTop: 10,
-    height: 600,
-  },
-  oddRow: {
-    backgroundColor: "#f3f2f8",
-  },
-  evenRow: {
-    backgroundColor: "#bdbdbd",
-  },
-});
-
 const headerColumns = [
   { id: "state", label: "State", align: "left" },
   { id: "code", label: "StateCode", align: "center" },
@@ -56,8 +39,26 @@ const headerColumns = [
   },
 ];
 
-export default function StateInfoTable({ states }) {
+export default function StateInfoTable({ states, isDark }) {
+  const useStyles = makeStyles({
+    tablecontainer: {
+      backgroundColor: `${isDark ? "black" : "white"}`,
+      borderRadius: 10,
+      boxShadow: "0 0 8px -4px rgba(0, 0, 0, 0.6)",
+      marginBottom: 10,
+      marginTop: 10,
+      height: 600,
+    },
+    oddRow: {
+      backgroundColor: `${isDark ? "#424242" : "#f3f2f8"}`,
+    },
+    evenRow: {
+      backgroundColor: `${isDark ? "#616161" : "#bdbdbd"}`,
+    },
+  });
+
   const classes = useStyles();
+
   let i = 0;
   return (
     <TableContainer className={classes.tablecontainer}>
@@ -65,7 +66,15 @@ export default function StateInfoTable({ states }) {
         <TableHead>
           <TableRow>
             {headerColumns.map((column) => (
-              <TableCell key={column.id} align={column.align}>
+              <TableCell
+                key={column.id}
+                align={column.align}
+                style={
+                  isDark
+                    ? { backgroundColor: "#1f1f1f", color: "white", border: 0 }
+                    : {}
+                }
+              >
                 {column.label}
               </TableCell>
             ))}
@@ -81,42 +90,42 @@ export default function StateInfoTable({ states }) {
                 <TableCell
                   key={state.state}
                   align="left"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {state.state}
                 </TableCell>
                 <TableCell
                   key={state.statecode}
                   align="center"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {state.statecode}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {inrformat(state.active)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {inrformat(state.confirmed)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {inrformat(state.recovered)}
                 </TableCell>
                 <TableCell
                   key={Math.random() / Math.random()}
                   align="center"
-                  style={{ borderRadius: 15 }}
+                  style={{ borderRadius: 15, border: 0, color: "white" }}
                 >
                   {inrformat(state.deaths)}
                 </TableCell>
