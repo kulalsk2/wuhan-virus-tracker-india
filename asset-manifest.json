@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wuhan-virus-tracker-india/static/css/main.e90e8ffb.chunk.css",
-    "main.js": "/wuhan-virus-tracker-india/static/js/main.f410c06d.chunk.js",
-    "main.js.map": "/wuhan-virus-tracker-india/static/js/main.f410c06d.chunk.js.map",
+    "main.css": "/wuhan-virus-tracker-india/static/css/main.72878789.chunk.css",
+    "main.js": "/wuhan-virus-tracker-india/static/js/main.029a1626.chunk.js",
+    "main.js.map": "/wuhan-virus-tracker-india/static/js/main.029a1626.chunk.js.map",
     "runtime-main.js": "/wuhan-virus-tracker-india/static/js/runtime-main.2694213b.js",
     "runtime-main.js.map": "/wuhan-virus-tracker-india/static/js/runtime-main.2694213b.js.map",
     "static/css/2.a4567992.chunk.css": "/wuhan-virus-tracker-india/static/css/2.a4567992.chunk.css",
     "static/js/2.7378d076.chunk.js": "/wuhan-virus-tracker-india/static/js/2.7378d076.chunk.js",
     "static/js/2.7378d076.chunk.js.map": "/wuhan-virus-tracker-india/static/js/2.7378d076.chunk.js.map",
     "index.html": "/wuhan-virus-tracker-india/index.html",
-    "precache-manifest.bc013375866eaf1ebbe5d23cbdbfe751.js": "/wuhan-virus-tracker-india/precache-manifest.bc013375866eaf1ebbe5d23cbdbfe751.js",
+    "precache-manifest.2ac8e66cc0ae6a248f6ef43fb6c766ae.js": "/wuhan-virus-tracker-india/precache-manifest.2ac8e66cc0ae6a248f6ef43fb6c766ae.js",
     "service-worker.js": "/wuhan-virus-tracker-india/service-worker.js",
     "static/css/2.a4567992.chunk.css.map": "/wuhan-virus-tracker-india/static/css/2.a4567992.chunk.css.map",
-    "static/css/main.e90e8ffb.chunk.css.map": "/wuhan-virus-tracker-india/static/css/main.e90e8ffb.chunk.css.map",
+    "static/css/main.72878789.chunk.css.map": "/wuhan-virus-tracker-india/static/css/main.72878789.chunk.css.map",
     "static/js/2.7378d076.chunk.js.LICENSE.txt": "/wuhan-virus-tracker-india/static/js/2.7378d076.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2694213b.js",
     "static/css/2.a4567992.chunk.css",
     "static/js/2.7378d076.chunk.js",
-    "static/css/main.e90e8ffb.chunk.css",
-    "static/js/main.f410c06d.chunk.js"
+    "static/css/main.72878789.chunk.css",
+    "static/js/main.029a1626.chunk.js"
   ]
 }
