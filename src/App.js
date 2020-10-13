@@ -135,7 +135,7 @@ function App() {
                 isDark={darkMode}
                 onClick={(e) => setCasesType("active")}
                 title="Active"
-                active={casesType == "active"}
+                active={casesType === "active"}
                 isColor1={true}
                 cases={
                   windowWidth < 770
@@ -145,7 +145,7 @@ function App() {
               />
               <StatusCard
                 isDark={darkMode}
-                active={casesType == "confirmed"}
+                active={casesType === "confirmed"}
                 isColor2={true}
                 onClick={(e) => setCasesType("confirmed")}
                 title="Confirmed"
@@ -157,7 +157,7 @@ function App() {
               />
               <StatusCard
                 isDark={darkMode}
-                active={casesType == "recovered"}
+                active={casesType === "recovered"}
                 isColor3={true}
                 onClick={(e) => setCasesType("recovered")}
                 title="Recovered"
@@ -169,7 +169,7 @@ function App() {
               />
               <StatusCard
                 isDark={darkMode}
-                active={casesType == "deaths"}
+                active={casesType === "deaths"}
                 isColor4={true}
                 onClick={(e) => setCasesType("deaths")}
                 title="Deaths"

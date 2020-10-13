@@ -45,7 +45,7 @@ export const showCirclesOnMap = (data, casesType = "active") =>
                 <div className="info-name">{state.state}</div>
                 <div className="info-active">Active:{state.active}</div>
                 <div className="info-confirmed">
-                  Recovered:{state.confirmed}
+                  confirmed:{state.confirmed}
                 </div>
                 <div className="info-recovered">
                   Recovered:{state.recovered}
