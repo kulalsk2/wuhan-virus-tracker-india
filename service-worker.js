@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wuhan-virus-tracker-india/precache-manifest.626f98345720782d0bfa5f3b91920cb9.js"
+  "/wuhan-virus-tracker-india/precache-manifest.07988bd64d3841dca408ab86bbdcb8ee.js"
 );
 
 self.addEventListener('message', (event) => {
